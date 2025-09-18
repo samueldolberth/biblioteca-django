@@ -1,12 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Livro
-# Create your views here.
 
+
+# ---------- views home -------------
+
+def index(request):
+    return render(request, 'index.html')
 
 def livros(request):
     return render(request, 'livros.html')
 
+# ---------- func crud --------------
 
 def salvar_livro(request):
     if request.method == 'POST':
@@ -19,10 +24,6 @@ def salvar_livro(request):
             'editora': editora
         })
     return HttpResponse('Método não permitido', status=405)
-
-
-def index(request):
-    return render(request, 'index.html')
 
 
 def cadastro_livro(request):
@@ -50,4 +51,28 @@ def cadastro_livro(request):
     # objects é um gerenciador de modelos padrão do Django que permite interagir/consultar com o banco de dados
     # all é uma função que recupera todos os registros da tabela livro - é o select do BD
     livros = Livro.objects.all()  # Recupera todos os livros do banco de dados
-    return render(request, 'livros.html', {'livros': livros})
+    return render(request, 'livros.html', {'livros': livro})
+
+
+def exclui_livro(request, livro_id):
+    # get_object_or_404() - esta função busca no banco de dados um objeto da tabela Livro cujo campo id seja igual a livro_id. 
+    # Se encontrar, retorna o objeto e guarda na variável livro. Se não encontrar, retorna uma página 404
+    livro = get_object_or_404(Livro, id=livro_id)
+    livro.delete()
+    # retorna ou permanece na página cadastra_livro
+    return redirect('cadastra_livro')
+
+def edita_livro(request, livro_id):
+    livro = get_object_or_404(Livro, id=livro_id)
+    livros = Livro.objects.all()
+
+    if request.method == "POST":
+        livro.titulo = request.POST['titulo']
+        livro.autor = request.POST['autor']
+        livro.ano_publicacao = request.POST['ano_publicacao']
+        livro.editora = request.POST['editora']
+        livro.save()
+        return redirect('cadastra_livro')
+    
+    return render(request, 'livros.html', {'livros': livros, 'livro_editar': livro})
+

@@ -23,7 +23,7 @@
     <div class="container mt-5">
       <h1 class="mb-4 text-center text-danger">Cadastro de Livros</h1>
             
-      <!--
+      
       {% if titulo_livro %}
         <div class="alert alert-success" role="alert">
           <strong>Livro salvo com sucesso!</strong><br>
@@ -35,7 +35,7 @@
           </ul>
         </div>
       {% endif %}
-      -->
+      
 
       <div class="card p-4 mb-4 shadow-sm">
           <form action="" method="POST">
@@ -87,16 +87,17 @@
                 <td>{{ livro.ano_publicacao }}</td>
                 <td>{{ livro.editora }}</td>
                 <td>
-                  <!-- aqui ações de edição e exclusão -->
+                  <a href="{% url 'edita_livro' livro.id %}" class="btn btn-sm btn-primary">Editar</a>
+                  <a href="{% url 'excluir_livro' livro.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Deseja excluir este livro?')">Excluir</a>
                 </td>
               </tr>
             {% empty %}
-            </table>
-            <tr>
-              <td colspan="5" class="text-center">Nenhum livro cadastrado.</td>
-            </tr>
+              <tr>
+                <td colspan="5" class="text-center">Nenhum livro cadastrado.</td>
+              </tr>
             <!--fechar o for-->
             {% endfor %}
+          </table>
         </div>
     </div>
 
