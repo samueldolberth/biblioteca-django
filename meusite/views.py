@@ -33,6 +33,7 @@ def cadastro_livro(request):
         autor = request.POST['autor']
         ano_publicacao = request.POST['ano_publicacao']
         editora = request.POST['editora']
+
         if livro_id:  # Se o ID do livro for fornecido, atualize o livro existente. Ele edita
             livro = livro_id
             livro.titulo = titulo
@@ -51,7 +52,7 @@ def cadastro_livro(request):
     # objects é um gerenciador de modelos padrão do Django que permite interagir/consultar com o banco de dados
     # all é uma função que recupera todos os registros da tabela livro - é o select do BD
     livros = Livro.objects.all()  # Recupera todos os livros do banco de dados
-    return render(request, 'livros.html', {'livros': livro})
+    return render(request, 'livros.html', {'livros': livros})
 
 
 def exclui_livro(request, livro_id):
@@ -60,7 +61,7 @@ def exclui_livro(request, livro_id):
     livro = get_object_or_404(Livro, id=livro_id)
     livro.delete()
     # retorna ou permanece na página cadastra_livro
-    return redirect('cadastra_livro')
+    return redirect('cadastro_livro')
 
 def edita_livro(request, livro_id):
     livro = get_object_or_404(Livro, id=livro_id)
@@ -72,7 +73,7 @@ def edita_livro(request, livro_id):
         livro.ano_publicacao = request.POST['ano_publicacao']
         livro.editora = request.POST['editora']
         livro.save()
-        return redirect('cadastra_livro')
+        return redirect('cadastro_livro')
     
     return render(request, 'livros.html', {'livros': livros, 'livro_editar': livro})
 
