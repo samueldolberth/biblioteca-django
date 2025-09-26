@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from meusite.views import index
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('meusite.urls')),
+    #path('', include('meusite.urls')),
+    path('', index),
     path('index/', include('meusite.urls')),
-    path('livros/', include('meusite.urls')),
+    #path('livros/', include('meusite.urls')), # Inclui as URLs do app meusite
+    #path('usuarios/', include('sgb_usuarios.urls')),  # Inclui as URLs do app sgb_usuarios
 ]

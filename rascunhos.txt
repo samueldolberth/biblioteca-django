@@ -1,0 +1,6 @@
+python manage.py run  # ativa o servidor do sistema
+
+python manage.py makemigrations  #criar um banco de dados baseado na classe Model
+python manage.py migrate
+
+python manage.py createsuperuser  # cria um superusuario na rota admin do django
