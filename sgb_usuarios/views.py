@@ -12,9 +12,15 @@ def cadastra_usuario(request):
         senha = request.POST('senha')
 
         usuario = User.objects.filter(username=nome_usuario).first()
+
         if usuario:
             return HttpResponse('Usuário já existe! Tente outro nome de usuário.')
         else:
-            usuario = User.objects.create_user(username=nome_usuario, email=email, password=senha)
+            usuario = User.objects.create_user(
+                username=nome_usuario, 
+                #first_name=nome,
+                #last_name=sobrenome,
+                email=email, 
+                password=senha)
             usuario.save()
             return HttpResponse('Usuário cadastrado com sucesso!')
