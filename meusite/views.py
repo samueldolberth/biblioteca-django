@@ -9,7 +9,8 @@ def index(request):
     return render(request, 'index.html')
 
 def livros(request):
-    return render(request, 'livros.html')
+    livros = Livro.objects.all()
+    return render(request, 'livros.html', {'livros': livros})
 
 # ---------- func crud --------------
 
