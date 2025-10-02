@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#formulario {
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#botao {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10%;
+}
+
+#titulo {
+    text-align: center;
+    display: fles;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2%;
+}

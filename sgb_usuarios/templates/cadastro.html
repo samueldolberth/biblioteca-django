@@ -1,32 +1,59 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     
-    <h1>Cadastro de Usuarios</h1>
+    <h1 class="" id="titulo">Cadastro de Usuarios</h1>
 
     <form action="{% url 'cadastro' %}" method="POST">
         {% csrf_token %}
-        <label for="">Usuario:</label>
-        <input type="text" placeholder="Digite o nome do usuario" name="nome_usuario">
 
-        <br><br>
+        <div class="row g-3" id="formulario">
+            <!-- NOME -->
+            <div class="col-md-6">
+                <label for="">Nome:</label>
+                <input type="text" class="form-control" placeholder="Digite seu nome aqui" aria-label="Primeiro nome" name="nome_usuario">
+            </div>
 
-        <label for="">E-mail:</label>
-        <input type="email" placeholder="Digite seu e-mail" name="email_usuario">
+            <!-- SOBRENOME -->
+            <div class="col-md-6">
+                <label for="">Sobrenome:</label>
+                <input type="text" class="form-control" placeholder="Digite seu sobrenome Aqui" aria-label="Last name" name="sobrenome_usuario">
+            </div>
 
-        <br><br>
+            <br><br>
 
-        <label for="">Senha:</label>
-        <input type="password" placeholder="Digite sua senha" name="senha_usuario">
+            <!-- EMAIL -->
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Email</label>  <!-- Ver esse for=""-->
+                <input type="email" class="form-control" id="inputEmail4" name="email_usuario"> <!-- remover esse id-->
+            </div>
+            <!-- SENHA -->
+            <div class="col-md-12">
+                <label for="inputPassword4" class="form-label">Senha</label> <!-- Ver esse for=""-->
+                <input type="password" class="form-control" id="inputPassword4" name="senha_usuario"> <!-- remover esse id-->
+            </div>
 
-        <br><br>
+            <div class="row g-12" id="botao">
+                <input class="btn btn-primary btn-lg" type="submit" value="Cadastrar">
+            </div>
 
-        <input type="submit" value="Cadastrar">
+        </div>        
+
+
+        
+
+
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

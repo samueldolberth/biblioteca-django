@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fail</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+    <div class="text-center p-5 bg-white shadow rounded" style="max-width: 400px;">
+        <h1 class="mb-4 text-success">Usuário já existe! Tente outro nome de usuário.</h1>
+        <p class="mb-4">Você pode voltar para a página inicial clicando no botão abaixo.</p>
+        <button class="btn btn-primary btn-lg">Voltar para a página inicial</button>
+    </div>
+
+</body>
+</html>
