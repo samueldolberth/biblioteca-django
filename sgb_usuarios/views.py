@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-
+from django.contrib.auth import authenticate, login
+from meusite.models import Livro
 
 def cadastra_usuario(request):
     if request.method == 'GET':
@@ -28,5 +29,20 @@ def cadastra_usuario(request):
                 password=senha
             )
             #return HttpResponse('Usuário cadastrado com sucesso!')
-            return render(request, 'feedback_success.html')
+            return render(request, 'feedback_success.html', {"username": username})
             
+def login_usuario(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    elif request.method == 'POST':
+        nome_usuario = request.POST.get('username')
+        senha_usuario = request.POST.get('password')
+
+        usuario = authenticate(username=nome_usuario, password=senha_usuario)
+
+        if usuario:
+            login(request, usuario)
+            livros = Livro.objects.all()
+            return render(request, 'livros.html', {'livros': livros})
+        else:
+            return HttpResponse('Falha no login! Usuário ou senha incorretos.')

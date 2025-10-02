@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Livro
+from django.contrib.auth.decorators import login_required
 
 
 # ---------- views home -------------
@@ -26,7 +27,7 @@ def salvar_livro(request):
         })
     return HttpResponse('Método não permitido', status=405)
 
-
+@login_required  # anotação para proteger a view, só acessa se estiver logado
 def cadastro_livro(request):
     if request.method == 'POST':
         livro_id = request.POST['livro_id']
