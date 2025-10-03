@@ -14,11 +14,11 @@
     <div class="text-center p-5 bg-white shadow rounded" style="max-width: 400px;">
         <h1 class="mb-4 text-success">Usuário já existe! Tente outro nome de usuário.</h1>
         <p class="mb-4">Você pode voltar ao cadastro clicando no botão abaixo.</p>
-        <button action="{% url 'cadastro' %}" class="btn btn-primary btn-lg">Voltar para o cadastro</button>
+        <a href="{% url 'cadastro' %}" class="btn btn-primary btn-lg">Voltar para o cadastro</a>
 
         <hr class="my-4">
         <p class="mb-4">Você pode voltar para a página inicial clicando no botão abaixo.</p>
-        <button action="{% url 'login_usuario' %}" class="btn btn-primary btn-lg">Voltar para a página inicial</button>
+        <a href="{% url 'login_usuario' %}" class="btn btn-primary btn-lg">Voltar para a página inicial</a>
     </div>
 
 </body>

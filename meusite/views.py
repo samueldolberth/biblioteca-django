@@ -56,7 +56,7 @@ def cadastro_livro(request):
     livros = Livro.objects.all()  # Recupera todos os livros do banco de dados
     return render(request, 'livros.html', {'livros': livros})
 
-
+@login_required
 def exclui_livro(request, livro_id):
     # get_object_or_404() - esta função busca no banco de dados um objeto da tabela Livro cujo campo id seja igual a livro_id. 
     # Se encontrar, retorna o objeto e guarda na variável livro. Se não encontrar, retorna uma página 404

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from meusite.models import Livro
 
 def cadastra_usuario(request):
@@ -46,3 +46,7 @@ def login_usuario(request):
             return render(request, 'livros.html', {'livros': livros})
         else:
             return HttpResponse('Falha no login! Usuário ou senha incorretos.')
+        
+def logout_usuario(request):
+    logout(request)
+    return render(request, 'login.html')
