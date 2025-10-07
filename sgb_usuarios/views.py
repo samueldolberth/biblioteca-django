@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -43,7 +43,8 @@ def login_usuario(request):
         if usuario:
             login(request, usuario)
             livros = Livro.objects.all()
-            return render(request, 'livros.html', {'livros': livros})
+            #return render(request, 'livros.html', {'livros': livros})
+            return redirect('cadastro_livro')
         else:
             return HttpResponse('Falha no login! Usuário ou senha incorretos.')
         

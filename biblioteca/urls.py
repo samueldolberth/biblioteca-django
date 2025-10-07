@@ -20,6 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('meusite/', include('meusite.urls')), # Inclui as URLs do app meusite
+    path('livros/', include('meusite.urls')), # Inclui as URLs do app meusite/sgb_livros
     path('auth/', include('sgb_usuarios.urls')),  # Inclui as URLs do app sgb_usuarios
+    path('accounts/', include('allauth.urls')),  # Inclui as URLs do django-allauth
 ]
