@@ -157,3 +157,12 @@ LOGIN_REDIRECT_URL = '/livros/'
 LOGOUT_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_LOGIN_ON_GET = True  # login automático ao clicar no botão de login do google
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # para redefinição de senha via email
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER = 'seuemail@gmail.com'
+#EMAIL_HOST_PASSWORD = 'suasenhaouappkey'
