@@ -44,7 +44,7 @@ def login_usuario(request):
             login(request, usuario)
             livros = Livro.objects.all()
             #return render(request, 'livros.html', {'livros': livros})
-            return redirect('cadastro_livro')
+            return redirect('cadastro_livro')  # redireciona para outra view
         else:
             return HttpResponse('Falha no login! Usuário ou senha incorretos.')
         
