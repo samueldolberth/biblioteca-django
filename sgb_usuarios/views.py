@@ -11,7 +11,7 @@ def cadastra_usuario(request):
     elif request.method == 'POST':
         nome = request.POST.get('nome_usuario')
         sobrenome = request.POST.get('sobrenome_usuario')
-        email = request.POST.get('email_usuario')
+        email = request.POST.get('email_usuario') 
         senha = request.POST.get('senha_usuario')
 
         username = f'{nome.strip().lower()}.{sobrenome.strip().lower()}'
