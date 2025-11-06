@@ -52,5 +52,13 @@ def logout_usuario(request):
     logout(request)
     return render(request, 'login.html')
 
+
+# reset de senha
+
 def back_to_login(request):
     return redirect('login_usuario')
+
+def send_email(request):
+    if request.method == 'POST':
+        return HttpResponse('Email enviado com sucesso!')
+    return render(request, 'password_reset_done.html')
