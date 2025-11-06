@@ -51,3 +51,6 @@ def login_usuario(request):
 def logout_usuario(request):
     logout(request)
     return render(request, 'login.html')
+
+def back_to_login(request):
+    return redirect('login_usuario')

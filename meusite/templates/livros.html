@@ -51,7 +51,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Autor(a)</label>
-                <input type="text" name="autor" class="form-control" value="{{ livro_editar.autor|default:'' }}" required>
+                <input type="text" name="autor" class="form-control" value="{{ livro_editar.autor.nome|default:'' }}" required>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Ano de Publicação</label>
@@ -84,7 +84,7 @@
             {% for livro in livros %}
               <tr>
                 <td>{{ livro.titulo }}</td>
-                <td>{{ livro.autor }}</td>
+                <td>{{ livro.autor.nome }}</td>
                 <td>{{ livro.ano_publicacao }}</td>
                 <td>{{ livro.editora }}</td>
                 <td>

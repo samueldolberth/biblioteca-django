@@ -7,6 +7,7 @@ urlpatterns = [
     path('cadastro/', views.cadastra_usuario, name='cadastro'),
     path('login/', views.login_usuario, name='login_usuario'),
     path('logout_usuario/', views.logout_usuario, name='logout'),
+    path('back/', views.back_to_login, name='back_to_login'), # redireciona para login pós alterar senha
 
     # redefinição de senha
 
