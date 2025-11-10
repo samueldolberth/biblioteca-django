@@ -6,3 +6,8 @@ python manage.py migrate
 python manage.py createsuperuser  # cria um superusuario na rota admin do django
 
 teste
+
+
+pip install django-allauth
+pip install jwt
+pip install request
