@@ -1,4 +1,4 @@
 INSTALAÇÕES:
-    pip install django-allauth
-    pip install jwt
-    pip install request
+    django-allauth
+    jwt
+    request

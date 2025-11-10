@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from sgb_usuarios.views import send_email
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('livros/', include('meusite.urls')), # Inclui as URLs do app meusite/sgb_livros
     path('auth/', include('sgb_usuarios.urls')),  # Inclui as URLs do app sgb_usuarios
     path('accounts/', include('allauth.urls')),  # Inclui as URLs do django-allauth
+    path('send_email/', send_email)
 ]
