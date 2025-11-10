@@ -1,13 +1,47 @@
-python manage.py run  # ativa o servidor do sistema
+RODAR O SITE
+    python manage.py run  # ativa o servidor do sistema
 
-python manage.py makemigrations  #criar um banco de dados baseado na classe Model
-python manage.py migrate
+PARA QUALQUER ALTERAÇÃO NOS MODELOS DO BANCO DE DADOS
+    python manage.py makemigrations  #criar um banco de dados baseado na classe Model
+    python manage.py migrate
 
-python manage.py createsuperuser  # cria um superusuario na rota admin do django
+CRIAÇÃO DE USUARIO
+    python manage.py createsuperuser  # cria um superusuario na rota admin do django
 
-teste
+INSTALAÇÕES
+
+    pip install django-allauth
+    pip install jwt
+    pip install request
+
+EXCLUIR LIVRO JA CADASTRADO DO BANCO DE DADOS
+
+    Abra o shell do Django:
+        python manage.py shell # para abrir o shell no visualstudio
+
+    E rode:
+        from app.models import Livro
+        Livro.objects.all().delete()
+        exit()
+
+    # troque "app" pelo nome do seu app
 
 
-pip install django-allauth
-pip install jwt
-pip install request
+PENDENCIAS
+
+    - fazer funcionar o menu hamburguer
+
+    - quando loga, direcionar para Home e não para Livros (html)
+
+    - permitir criar livro sem autor ** (sera?)
+
+    - Em livros, no campo autor colocar um <select> ao inves de campo de texto
+
+    - criar html para CRUD autores
+
+    - no Home adicionar botao Ir para Autores
+
+    - Estilizar bem bonitinho a tela Home, buscar referencias
+
+    - Criar tela de Avaliações, pesquisar se precisa do nome do usuario
+        vai ter q pesquisar livros ja cadastrados para dar a avaliação
