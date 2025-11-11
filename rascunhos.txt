@@ -5,11 +5,10 @@ PARA QUALQUER ALTERAÇÃO NOS MODELOS DO BANCO DE DADOS
     python manage.py makemigrations  #criar um banco de dados baseado na classe Model
     python manage.py migrate
 
-CRIAÇÃO DE USUARIO
+CRIAÇÃO DE USUÁRIO
     python manage.py createsuperuser  # cria um superusuario na rota admin do django
 
 INSTALAÇÕES
-
     pip install django-allauth
     pip install jwt
     pip install request
@@ -17,7 +16,7 @@ INSTALAÇÕES
 EXCLUIR LIVRO JA CADASTRADO DO BANCO DE DADOS
 
     Abra o shell do Django:
-        python manage.py shell # para abrir o shell no visualstudio
+        python manage.py shell
 
     E rode:
         from app.models import Livro
@@ -28,8 +27,6 @@ EXCLUIR LIVRO JA CADASTRADO DO BANCO DE DADOS
 
 
 PENDENCIAS
-
-    - fazer funcionar o menu hamburguer
 
     - quando loga, direcionar para Home e não para Livros (html)
 

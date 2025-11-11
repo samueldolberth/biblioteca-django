@@ -42,7 +42,7 @@ def login_usuario(request):
 
         if usuario:
             login(request, usuario)
-            livros = Livro.objects.all()
+            #livros = Livro.objects.all()
             #return render(request, 'livros.html', {'livros': livros})
             return redirect('cadastro_livro')  # redireciona para outra view
         else:
