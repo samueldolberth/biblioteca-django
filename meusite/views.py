@@ -90,3 +90,20 @@ def edita_livro(request, livro_id):
 
 def avaliacoes(request):
     return render(request, 'avaliacoes.html')
+
+def salvar_avaliacao(request):
+    if request.method == 'POST':
+        livro_id = request.POST['livro_id']
+        avaliador = request.POST['avaliador']
+        nota = request.POST['nota']
+        comentario = request.POST['comentario']
+
+        livro = get_object_or_404(Livro, id=livro_id)
+
+        Avaliacao.objects.create(
+            livro=livro,
+            avaliador=avaliador,
+            nota=nota,
+            comentario=comentario
+        )
+        return redirect('avaliacoes')

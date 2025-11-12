@@ -1,79 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <title>Sistema de Gerenciamento de Livros</title>
-
-    <style>
-      /* Barra superior */
-      .navbar-custom {
-        background-color: #0dcaf0; /* Azul claro padrão do bg-info */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-        position: relative;
-      }
-
-      /* Centraliza o título */
-      .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-weight: bold;
-        font-size: 1.25rem;
-        color: #ffffff !important; /* Texto branco */
-        white-space: nowrap;
-      }
-
-      .navbar-nav .nav-link {
-        color: #ffffff !important;
-        font-weight: 500;
-        transition: 0.3s;
-      }
-
-      .navbar-nav .nav-link:hover {
-        text-decoration: underline;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <title>Avaliações</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .navbar-custom {
+      background-color: #0dcaf0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+    .navbar-brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+    }
+  </style>
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container-fluid position-relative">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+      <div class="container-fluid position-relative">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          SGBooks - Sistema de Gerenciamento de Livros
+        </a>
+        <ul class="navbar-nav ms-auto d-flex flex-row gap-3 me-3">
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'cadastro_livro' %}">Livros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Autores</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'avaliacoes' %}">Avaliações</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-          <!-- Título centralizado e em branco -->
-          <a class="navbar-brand" href="{% url 'index' %}">
-            SGBooks - Sistema de Gerenciamento de Livros
-          </a>
+  <div class="container mt-5">
+    <h1 class="mb-4 text-center text-dark">Avaliações</h1>
 
-          <!-- Menu à direita -->
-          <ul class="navbar-nav ms-auto d-flex flex-row gap-3 me-3">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'cadastro_livro' %}">Livros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Autores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'avaliacoes' %}">Avaliações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">Sair</a>
-            </li>
-          </ul>
+    <a class="btn btn-primary mb-3" href="#">Adicionar Avaliação</a>
+
+    <div class="card p-4 mb-4 shadow-sm">
+
+      {% for a in avaliacoes %}
+        <div class="card p-3 mb-3">
+          <h5 class="card-title">Livro: {{ a.livro.titulo }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Avaliador: {{ a.avaliador.username }}</h6>
+          <p class="card-text">Comentário: {{ a.comentario }}</p>
+          <p class="card-text">Nota: {{ a.nota }}/5</p>
         </div>
-      </nav>
-    </header>
-
-    <div class="container mt-5"
-    
+      {% empty %}
+        <p class="text-muted">Nenhuma avaliação cadastrada.</p>
+      {% endfor %}
+    </div>
+  </div>
 </body>
 </html>
