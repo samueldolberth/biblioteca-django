@@ -88,3 +88,5 @@ def edita_livro(request, livro_id):
     
     return render(request, 'livros.html', {'livros': livros,'autores': autores, 'livro_editar': livro})
 
+def avaliacoes(request):
+    return render(request, 'avaliacoes.html')

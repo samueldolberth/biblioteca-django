@@ -16,4 +16,7 @@ urlpatterns = [
     # ações de edição e exclusão
     path('excluir/<int:livro_id>/', views.exclui_livro, name='exclui_livro'),
     path('editar/<int:livro_id>/', views.edita_livro, name='edita_livro'),
+
+    # avaliações
+    path('avaliacoes/', views.avaliacoes, name='avaliacoes'),
 ]

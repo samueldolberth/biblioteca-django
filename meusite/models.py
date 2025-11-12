@@ -14,3 +14,13 @@ class Livro(models.Model): #models.model indica que a classe Livro é um modelo 
     ano_publicacao = models.PositiveIntegerField()
     editora = models.CharField(max_length=100, blank=True, null=True) #blank e null permitem que o campo seja opcional
 
+class Avaliacao(models.Model):
+    livro = models.ForeignKey(
+        Livro,
+        on_delete=models.CASCADE,
+        related_name='avaliacoes')
+    avaliador = models.CharField(max_length=100)
+    nota = models.PositiveIntegerField()
+    comentario = models.TextField(blank=True, null=True)
+    data_avaliacao = models.DateTimeField(auto_now_add=True)
+
