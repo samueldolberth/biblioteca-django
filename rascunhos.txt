@@ -13,6 +13,7 @@ INSTALAÇÕES
     pip install jwt
     pip install request
     pip install pyjwt
+    
 EXCLUIR LIVRO JA CADASTRADO DO BANCO DE DADOS
 
     Abra o shell do Django:

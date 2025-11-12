@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Livro, Autor
+from .models import Livro, Autor, Avaliacao
 from django.contrib.auth.decorators import login_required
 
 
@@ -91,19 +91,26 @@ def edita_livro(request, livro_id):
 def avaliacoes(request):
     return render(request, 'avaliacoes.html')
 
+@login_required
 def salvar_avaliacao(request):
+    livros = Livro.objects.all()
+
     if request.method == 'POST':
-        livro_id = request.POST['livro_id']
-        avaliador = request.POST['avaliador']
-        nota = request.POST['nota']
-        comentario = request.POST['comentario']
+        livro_id = request.POST.get('livro_id')
+        nota = request.POST.get('nota')
+        comentario = request.POST.get('comentario')
 
         livro = get_object_or_404(Livro, id=livro_id)
 
+        # O avaliador deve ser o usuário logado
         Avaliacao.objects.create(
             livro=livro,
-            avaliador=avaliador,
+            avaliador=request.user,
             nota=nota,
             comentario=comentario
         )
+
         return redirect('avaliacoes')
+
+    # Se não for POST, renderiza o formulário
+    return render(request, 'salvar_avaliacao.html', {'livros': livros})

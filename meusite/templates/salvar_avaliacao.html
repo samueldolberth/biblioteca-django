@@ -62,7 +62,7 @@
         <!-- Selecionar Livro -->
         <div class="mb-3">
           <label for="livro" class="form-label">Livro</label>
-          <select name="livro" id="livro" class="form-select" required>
+          <select name="livro_id" id="livro" class="form-select" required>
             <option value="" disabled selected>Selecione um livro</option>
             {% for livro in livros %}
               <option value="{{ livro.id }}">{{ livro.titulo }}</option>
