@@ -19,5 +19,5 @@ urlpatterns = [
 
     # avaliações
     path('avaliacoes/', views.avaliacoes, name='avaliacoes'),
-    path('salvar_avaliacao/', views.salvar_avaliazao, name='salvar_avaliacao'),
+    path('salvar_avaliacao/', views.salvar_avaliacao, name='salvar_avaliacao'),
 ]
