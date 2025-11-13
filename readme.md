@@ -1,7 +1,6 @@
 ## SGBooks — Sistema de Gerenciamento de Livros
 
 O **SGBooks** é um sistema web desenvolvido em **Django** com o objetivo de **gerenciar livros e avaliações** de forma simples, rápida e organizada.  
-Ideal para quem deseja manter um controle eficiente do acervo literário, registrar avaliações pessoais e, futuramente, gerar relatórios de desempenho de leitura.
 
 > 💡 O foco principal é **usabilidade e organização**, mantendo um design limpo e funcional.
 
@@ -10,7 +9,7 @@ Ideal para quem deseja manter um controle eficiente do acervo literário, regist
 ## Nova Funcionalidade — Avaliação de Livros
 
 A atualização mais recente do **SGBooks** traz uma **tela de avaliação de livros** totalmente integrada ao sistema.  
-Agora, os usuários autenticados podem avaliar livros já cadastrados com **nota e comentário**, fortalecendo o controle de qualidade do acervo.
+Agora, os usuários autenticados podem avaliar livros já cadastrados com **nota e comentário**.
 
 ### Funcionalidades atuais:
 - Compatível com livros já existentes no sistema  
