@@ -31,8 +31,6 @@ PENDENCIAS
 
     - quando loga, direcionar para Home e não para Livros (html)
 
-    - permitir criar livro sem autor ** (sera?)
-
     - Em livros, no campo autor colocar um <select> ao inves de campo de texto
 
     - criar html para CRUD autores
@@ -41,5 +39,4 @@ PENDENCIAS
 
     - Estilizar bem bonitinho a tela Home, buscar referencias
 
-    - Criar tela de Avaliações, pesquisar se precisa do nome do usuario
-        vai ter q pesquisar livros ja cadastrados para dar a avaliação
+    - criar arquivo header.html para importar em todas as telas
