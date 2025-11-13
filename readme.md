@@ -38,14 +38,14 @@ Agora, os usuários autenticados podem avaliar livros já cadastrados com **nota
 ### Formulário de Avaliação  
 Tela para cadastrar uma nova avaliação com seleção de livro, comentário e nota:
 
-![Formulário de Avaliação](img/form_avaliacao.png)
+![Formulário de Avaliação](media/img/form_avaliacao.png)
 
 ---
 
 ### Lista de Avaliações  
 Avaliações são exibidas em **cards** limpos e organizados:
 
-![Cards de Avaliações](img/cards_avaliacao.png)
+![Cards de Avaliações](media/img/cards_avaliacao.png)
 
 > 💡 As imagens devem ser salvas na pasta `/static/img/` ou `/media/img/`, e os caminhos atualizados conforme a estrutura do seu projeto Django.
 
