@@ -35,14 +35,14 @@ Agora, os usuários autenticados podem avaliar livros já cadastrados com **nota
 
 ## 🖼️ Pré-visualização
 
-### 📋 Formulário de Avaliação  
+### Formulário de Avaliação  
 Tela para cadastrar uma nova avaliação com seleção de livro, comentário e nota:
 
 ![Formulário de Avaliação](img/form_avaliacao.png)
 
 ---
 
-### 💬 Lista de Avaliações  
+### Lista de Avaliações  
 Avaliações são exibidas em **cards** limpos e organizados:
 
 ![Cards de Avaliações](img/cards_avaliacao.png)
@@ -98,7 +98,12 @@ pip install django-allauth jwt pyjwt request
 
 ---
 
-## Autor
+## Autor e Informações do Projeto
 
-Desenvolvido por **Samuel**  
-> Projeto criado com foco em aprendizado e aprimoramento em **Django e desenvolvimento full stack**.
+| 🧾 **Informação** | 💡 **Detalhes** |
+|--------------------|----------------|
+| 👤 **Desenvolvido por** | **Samuel** |
+| 🎓 **Curso** | Análise e Desenvolvimento de Sistemas (ADS) |
+| 🏫 **Unidade Curricular** | Programação Web I |
+| 🗓️ **Período de Desenvolvimento** | 2025 |
+| ⚙️ **Tecnologias Principais** | Django · Python · Bootstrap 5 · SQLite |
