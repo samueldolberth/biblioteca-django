@@ -101,8 +101,8 @@ pip install django-allauth jwt pyjwt request
 ## Autor e Informações do Projeto
 
 
-| **Desenvolvido por** | **Samuel Dolberth** | <br>
-| **Curso** | Análise e Desenvolvimento de Sistemas (ADS) | <br>
-| **Unidade Curricular** | Programação Web I | <br>
-| **Período de Desenvolvimento** | 2025 | <br>
-| **Tecnologias Principais** | Django · Python · Bootstrap 5 · SQLite | <br>
+**Desenvolvido por:** **Samuel Dolberth** <br>
+**Curso:** Análise e Desenvolvimento de Sistemas (ADS) <br>
+**Unidade Curricular:** Programação Web I <br>
+**Período de Desenvolvimento:** 2025 <br>
+**Tecnologias Principais:** Django · Python · Bootstrap 5 · SQLite <br>
