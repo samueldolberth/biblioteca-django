@@ -2,7 +2,7 @@
 
 O **SGBooks** é um sistema web desenvolvido em **Django** com o objetivo de **gerenciar livros e avaliações** de forma simples, rápida e organizada.  
 
-> 💡 O foco principal é **usabilidade e organização**, mantendo um design limpo e funcional.
+O foco principal é **usabilidade e organização**, mantendo um design limpo e funcional.
 
 ---
 
