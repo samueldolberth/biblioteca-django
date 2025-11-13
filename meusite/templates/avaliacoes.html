@@ -49,11 +49,15 @@
     <a class="btn btn-primary mb-3" href="{% url 'salvar_avaliacao' %}">Adicionar Avaliação</a>
 
     <div class="card p-4 mb-4 shadow-sm">
-
       {% for a in avaliacoes %}
         <div class="card p-3 mb-3">
-          <h5 class="card-title">Livro: {{ a.livro.titulo }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Avaliador: {{ a.avaliador.username }}</h6>
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title mb-0">Livro: {{ a.livro.titulo }}</h5>
+            <a href="{% url 'exclui_avaliacao' a.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Deseja excluir esta avaliação?')">
+              Excluir
+            </a>
+          </div>
+          <h6 class="card-subtitle mb-2 text-muted">Avaliador: {{ a.avaliador }}</h6>
           <p class="card-text">Comentário: {{ a.comentario }}</p>
           <p class="card-text">Nota: {{ a.nota }}/5</p>
         </div>
@@ -61,6 +65,7 @@
         <p class="text-muted">Nenhuma avaliação cadastrada.</p>
       {% endfor %}
     </div>
+
   </div>
 </body>
 </html>

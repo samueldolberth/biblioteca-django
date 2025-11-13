@@ -89,7 +89,8 @@ def edita_livro(request, livro_id):
     return render(request, 'livros.html', {'livros': livros,'autores': autores, 'livro_editar': livro})
 
 def avaliacoes(request):
-    return render(request, 'avaliacoes.html')
+    avaliacoes = Avaliacao.objects.all()
+    return render(request, 'avaliacoes.html', {'avaliacoes': avaliacoes})
 
 @login_required
 def salvar_avaliacao(request):
@@ -114,3 +115,10 @@ def salvar_avaliacao(request):
 
     # Se não for POST, renderiza o formulário
     return render(request, 'salvar_avaliacao.html', {'livros': livros})
+
+@login_required
+def exclui_avaliacao(request, avaliacao_id):
+    avaliacao = get_object_or_404(Avaliacao, id=avaliacao_id, avaliador=request.user)
+    avaliacao.delete()
+
+    return redirect('avaliacoes')

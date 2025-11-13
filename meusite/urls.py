@@ -20,4 +20,6 @@ urlpatterns = [
     # avaliações
     path('avaliacoes/', views.avaliacoes, name='avaliacoes'),
     path('salvar_avaliacao/', views.salvar_avaliacao, name='salvar_avaliacao'),
+
+    path('excluir_avaliacao/<int:avaliacao_id>/', views.exclui_avaliacao, name='exclui_avaliacao'),
 ]
